@@ -1,0 +1,21 @@
+<div class="col-lg-4">
+    <div class="card-project">
+        <h3>
+            {{ project.title }}
+            <br>
+            <small>{{ project.type }}</small>
+        </h3>
+        <hr>
+        <p>
+            <img class="img-responsive img-project" src="{{ project.image.url }}" alt="{{ project.image.alt }}" title="{{ project.image.title }}">
+        </p>
+        <p>
+            <more>
+                {{ project.description | strip_html | truncate: 100 }}
+            </more>
+        </p>
+        <p>
+            <a href="{{ project.permalink }}" class="btn btn-send">View more</a>
+        </p>
+    </div>
+</div>

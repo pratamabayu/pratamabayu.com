@@ -1,0 +1,67 @@
+title: Stelucap
+date: 2018/08/28
+permalink: /projects/stelucap
+link: 
+type: E-Learning
+categories: ['Desktop Development']
+work-in-progress: true
+contribution: ['Designer', 'UI/UX Designer', 'Programmer']
+description: |
+  A desktop application that converts from text into sound and three-dimensional mouth shape visualization for Indonesian pronunciation.
+
+  <div class="text-center">
+    <img src="/images/projects/stelucap_feature_1.png" class="img-responsive center-block" height="300px" alt="Default mode, loop is on"/>
+    <br>
+    <br>
+    <i>Screenshot 1. Default mode, loop is on</i>
+  </div>
+
+  <br>
+
+  <div class="text-center">
+    <img src="/images/projects/stelucap_feature_2.png" class="img-responsive center-block" height="300px" alt="Writing mode, loop is on"/>
+    <br>
+    <br>
+    <i>Screenshot 2. Writing mode, loop is on</i>
+  </div>
+
+  <br>
+
+  <div class="text-center">
+    <img src="/images/projects/stelucap_feature_3.png" class="img-responsive center-block" height="300px" alt="Playing mode, orbit is turning left"/>
+    <br>
+    <br>
+    <i>Screenshot 3. Playing mode, orbit is turning left</i>
+  </div>
+
+  <br>
+
+  <div class="text-center">
+    <img src="/images/projects/stelucap_feature_4.png" class="img-responsive center-block" height="300px" alt="Default mode, settings panel is on"/>
+    <br>
+    <br>
+    <i>Screenshot 4. Default mode, settings panel is on</i>
+  </div>
+
+  <br>
+
+  <div class="text-center">
+    <video class="img-responsive center-block" width="520" height="300" controls>
+      <source src="https://dl.dropboxusercontent.com/s/lrvy0zc7e7qstto/Screencast.mp4?dl=1" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <br>
+    <br>
+    <i>Screencast 1. Stelucap basic demo</i>
+  </div>
+
+  <br>
+
+  #### Are you curious?
+
+  [Contact Me](https://pratamabayu.com/contact) to get more info.
+image:
+  url: /images/projects/stelucap-banner.png
+  title: "Project: Stelucap"
+  alt: A screenshot of Stelucap
+tags: ['C#', 'Unity3D', 'Text to Speech', 'Text to Visemes', 'Indonesian']

@@ -1,0 +1,67 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: Pratama Bayu Widagdo
+email: hi@pratamabayu.com
+description: >
+  The personal website about resume, projects, and blog of Pratama Bayu Widagdo as Designer, Programmer, Lecturer, and Bassist.
+baseurl: # the subpath of your site, e.g. /blog
+url: "https://pratamabayu.com" # the base hostname & protocol for your site, e.g. http://example.com
+
+exclude: ['README.md']
+
+# Theme settings
+paginate: 5
+paginate_path: "/blog/page:num/"
+
+disqus_shortname: pratamabayu
+google_analytics: UA-105480363-1
+
+copyright: Pratama Bayu Widagdo.
+
+# Portfolio settings
+portfolio_dir: "projects"
+skip_related_projects: true
+related_project_keys: ["category", "tags"]
+related_min_common: 0.7
+
+# Archives
+jekyll-archives:
+  enabled: all
+  layouts:
+    year: year-archive
+    month: month-archive
+    day: day-archive
+    tag: tag-archive
+    category: category-archive
+  permalinks:
+    year: '/archive/:year/'
+    month: '/archive/:year/:month/'
+    day: '/archive/:year/:month/:day/'
+    tag: '/archive/tag/:name/'
+    category: '/archive/category/:name/'
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+gems:
+  - jekyll-feed
+  - jekyll-paginate
+  - uglifier
+  - jekyll-gist
+  - jekyll-archives
+exclude:
+  - Gemfile
+  - Gemfile.lock

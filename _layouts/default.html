@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include head.html %}
+
+<body>
+  <script src="{{ " /javascripts/jquery-3.2.1.min.js " | prepend: site.baseurl }}"></script>
+  <script src="{{ " /javascripts/bootstrap.min.js " | prepend: site.baseurl }}"></script>
+
+  {% include header.html %} {{ content }} {% include footer.html %} {% include google-analytics.html %}
+</body>
+
+</html>

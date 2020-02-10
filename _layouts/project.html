@@ -1,0 +1,88 @@
+--- 
+layout: default 
+---
+
+<!-- BANNER DESCRIPTION -->
+<div id="banner-project">
+    <div class="container">
+        <div class="row centered">
+            <div class="col-lg-12">
+                <h1>{{ page.title }}</h1>
+                <h3>{{ page.type}}</h3>
+                <p>
+                    {% for category in page.categories %}
+                     <span class="label label-category">{{ category }}</span>
+                    {% endfor %}
+                </p>
+                {% if page.link %}
+                <a href="{{ page.link }}" class="btn btn-brand" target="_blank">Go to Project Site</a>
+                {% endif %}
+            </div>
+            <!--/.col-lg-12 -->
+        </div>
+        <!--/.row -->
+    </div>
+    <!--/.container -->
+</div>
+
+<!-- PROJECT DESCRIPTION -->
+<div id="project">
+    <div class="container desc">
+        <div class="row">
+            <div class="col-lg-2">
+                <label><t>Contribution</t></label>
+                <p>
+                    {% for as in page.contribution %}
+                    <span class="label label-tag">{{ as }}</span>
+                    {% endfor %}
+                </p>
+            </div>
+            <div class="col-lg-8">
+                <label><t>Description</t></label>
+                {{ page.description | markdownify }}
+            </div>
+            <div class="col-lg-2">
+                <label><t>Tags</t></label>
+                <p>
+                    {% for tag in page.tags %}
+                    <span class="label label-tag">{{ tag }}</span>
+                    {% endfor %}
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-2">
+
+            </div>
+            <div class="col-lg-8">
+                {% if page.related_projects.size > 0 %}
+                <h4>Related Projects</h4>
+                {% for project in page.related_projects limit:3 %}
+                <div class="col-sm-4">
+                    <div class="card-project">
+                        <h4>
+                            {{ project.title }}
+                        </h4>
+                        <hr>
+                        <p>
+                            <img class="img-responsive img-project" src="{{ project.image.url }}" alt="{{ project.image.alt }}" title="{{ project.image.title }}">
+                        </p>
+                        <p>
+                            <more>
+                                {{ project.description | strip_html | truncate: 100 }}
+                            </more>
+                        </p>
+                        <p>
+                            <a href="{{ project.permalink }}" class="btn btn-send">View more</a>
+                        </p>
+                    </div>
+                </div>
+                {% endfor %}
+                {% endif %}
+            </div>
+            <div class="col-lg-2">
+                
+            </div>
+        </div>
+    </div>
+</div>

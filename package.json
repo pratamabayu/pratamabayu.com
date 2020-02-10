@@ -1,0 +1,13 @@
+{
+  "name": "pratamabayu.com",
+  "version": "1.0.0",
+  "description": "Hi",
+  "scripts": {
+    "build": "jekyll build",
+    "serve": "jekyll serve --draft",
+    "deploy": "firebase deploy --token $FIREBASE_TOKEN"
+  },
+  "devDependencies": {
+    "firebase-tools": "^3.7.0"
+  }
+}

@@ -1,0 +1,130 @@
+--- 
+layout: default 
+title: Contact
+permalink: /contact/index
+---
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Morphext/2.4.4/morphext.min.js"></script>
+
+<!-- BANNER DESCRIPTION -->
+<div id="banner-contact">
+    <div class="container">
+        <div class="row centered">
+            <div class="col-lg-12">
+                <h1>Contact Me</h1>
+                <h2>I'll <span id="word-rotating" class="word-rotating-spot">Listen to,Care about,Solve</span> Your Problem</h2>
+                <a href="{{ "/" | relative_url }}" class="btn btn-brand">Read My Resume</a>
+            </div>
+            <!--/.col-lg-12 -->
+        </div>
+        <!--/.row -->
+    </div>
+    <!--/.container -->
+</div>
+
+<script>
+    $("#word-rotating").Morphext({
+        // The [in] animation type. Refer to Animate.css for a list of available animations.
+        animation: "fadeInUp",
+        // An array of phrases to rotate are created based on this separator. Change it if you wish to separate the phrases differently (e.g. So Simple | Very Doge | Much Wow | Such Cool).
+        separator: ",",
+        // The delay between the changing of each phrase in milliseconds.
+        speed: 2000,
+        complete: function () {
+            // Called after the entrance animation is executed.
+        }
+    });
+</script>
+
+<!-- CONTACT DESCRIPTION -->
+<div id="contact">
+    <div class="container desc">
+        <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-4">
+                <p>
+                    <t>Email</t>
+                    <br>
+                    <a id="email-link"></a>
+                    <br>
+                </p>
+                <p>
+                    <t>Address</t>
+                    <br>
+                    <a href="https://google.com/maps/search?api=1&query=semarang" target="_blank">3rd Floor at Penggung Shophouse
+                        <br> Semarang, Indonesia
+                        <br> Postal 50227
+                        </a>
+                    <br>
+                </p>
+                <p>
+                    <t>Phone</t>
+                    <br>
+                    <a href="tel:+6285727760737">+62 85 727 760 737</a>
+                    <br>
+                </p>
+                <p>
+                    <t>Social</t>
+                    <br>
+                    <a href="https://youtube.com/channel/UCoBjeqGo4u911ZewtSXVK4A" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://github.com/pratamabayu" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://bitbucket.org/pratamabayu" target="_blank"><i class="fab fa-bitbucket"></i></a>
+                    <br>
+                </p>
+            </div>
+            <div class="col-lg-6">
+                <form id="contact-form" method="post" role="form">
+                    <div class="contact-messages"></div>
+                    <div class="controls">
+                        <div class="row">
+                            <div class="col-md-6 offset-md-6">
+                                <div class="form-group">
+                                    <label for="form_name">Name</label>
+                                    <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your name" required="required" data-error="Please enter your name."/>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 offset-md-6">
+                                <div class="form-group">
+                                    <label for="form_email">Email</label>
+                                    <input id="form_email" type="email" name="_replyto" class="form-control" placeholder="Please enter your email" required="required" data-error="Valid email is required."/>
+                                    <input type="hidden" name="_subject" value="Yay! You got new message" />
+                                    <input type="hidden" name="_next" value="https://pratamabayu.com/contact/thanks" />
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="form_message">Message</label>
+                                    <textarea id="form_message" name="message" class="form-control" placeholder="Message for me" rows="4" required="required" data-error="Please leave me a message."></textarea>
+                                    <input type="text" name="_gotcha" style="display:none" />
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input class="btn btn-send" type="submit" value="Send Message"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-1"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var emailLink =  document.getElementById('email-link');
+    emailLink.setAttribute('href', 'mailto:' + 'hi' + '@' + 'pratamabayu' + '.' + 'com');
+    emailLink.innerText = 'hi' + '@' + 'pratamabayu' + '.' + 'com';
+
+    var contactform =  document.getElementById('contact-form');
+    contactform.setAttribute('action', '//formspree.io/' + 'contact.me.pratama.bayu' + '@' + 'gmail' + '.' + 'com');
+</script>
+

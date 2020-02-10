@@ -1,0 +1,14 @@
+<footer id="copyright">
+    {% if site.copyright %}
+    <div class="container">
+        <p>© 2014 - <span id="current-year"></span>. {{ site.copyright }}</p>
+    </div>
+    {% endif %}
+</footer>
+
+<script>
+    var currentYearElement =  document.getElementById('current-year');
+
+    var currentDate = new Date();
+    currentYearElement.innerText = currentDate.getFullYear();
+</script>

@@ -1,0 +1,173 @@
+title: SocialHub
+date: 2018/08/28
+permalink: /projects/social-hub
+link: 
+type: Social Media Management
+categories: ['Web Development']
+work-in-progress: false
+contribution: ['Designer', 'Programmer']
+description: |
+  An "All in One" social media management API. Currently supports Instagram (by private API), 
+  Facebook (by public API), and Twitter (by public API), next couple months will support Google+ (by Public API) and Youtube (by Public API).
+
+  #### Portability 
+
+  This uses [Docker](https://www.docker.com) to make installation easier in your (Virtual Private Server) machine, especially for microservice. In the example of installing using Docker compose, it will be
+
+  ```json
+  version: '2.1'
+
+  networks:
+    cluster-network:
+      driver: bridge
+
+  services:
+    rabbitmq:
+      image: rabbitmq:3.7.4-management
+      container_name: RabbitMQHost
+      hostname: RabbitMQHost
+      ports:
+        - 15672:15672
+        - 5671:5671
+        - 5672:5672
+      volumes:
+        - /opt/socialhub/rabbitmq_data:/var/lib/rabbitmq
+      environment:
+        - RABBITMQ_DEFAULT_USER={YOUR_RABBITMQ_USER}
+        - RABBITMQ_DEFAULT_PASS={YOUR_RABBITMQ_USER}
+      networks:
+        - cluster-network
+
+    socialhub:
+      image: {OUR_ACCOUNT}/socialhub
+      container_name: SocialHub
+      ports:
+        - 3000:80
+      environment:
+        - MEDIA_EXTERNAL_BASE_URL={YOUR_EXTERNAL_BASE_URL}
+        - MEDIA_INTERNAL_BASE_URL={YOUR_INTERNAL_BASE_URL}
+        - FACEBOOK_APP_ID={YOUR_FACEBOOK_APP_ID}
+        - FACEBOOK_APP_SECRET={YOUR_FACEBOOK_APP_SECRET}
+        - TWITTER_CONSUMER_KEY={YOUR_TWITTER_CONSUMER_KEY}
+        - TWITTER_CONSUMER_KEY_SECRET={YOUR_TWITTER_CONSUMER_KEY_SECRET}
+        - RABBITMQ_HOSTNAME=RabbitMQHost
+        - RABBITMQ_USERNAME={YOUR_RABBITMQ_USERNAME}
+        - RABBITMQ_PASSWORD={YOUR_RABBITMQ_PASSWORD}
+        - MONGODB_CONNECTION_STRING={YOUR_MONGODB_CONNECTION_STRING}
+      volumes:
+        - /opt/socialhub/media_data:/data/media
+      restart: always
+      depends_on:
+        - rabbitmq
+      links:
+        - rabbitmq
+      networks:
+        - cluster-network
+
+    socialhub.worker:
+      image: {OUR_ACCOUNT}/socialhub.worker
+      container_name: SocialHubWorker
+      environment:
+        - MEDIA_EXTERNAL_BASE_URL={YOUR_EXTERNAL_BASE_URL}
+        - MEDIA_INTERNAL_BASE_URL={YOUR_INTERNAL_BASE_URL}
+        - FACEBOOK_APP_ID={YOUR_FACEBOOK_APP_ID}
+        - FACEBOOK_APP_SECRET={YOUR_FACEBOOK_APP_SECRET}
+        - TWITTER_CONSUMER_KEY={YOUR_TWITTER_CONSUMER_KEY}
+        - TWITTER_CONSUMER_KEY_SECRET={YOUR_TWITTER_CONSUMER_KEY_SECRET}
+        - RABBITMQ_HOSTNAME=RabbitMQHost
+        - RABBITMQ_USERNAME={YOUR_RABBITMQ_USERNAME}
+        - RABBITMQ_PASSWORD={YOUR_RABBITMQ_PASSWORD}
+        - MONGODB_CONNECTION_STRING={YOUR_MONGODB_CONNECTION_STRING}
+      restart: always
+      depends_on:
+        - rabbitmq
+      links:
+        - rabbitmq
+      networks:
+        - cluster-network
+    ```
+  So, you can manage free, independently and scale up or down according to your needs.
+
+  #### Functionality
+
+  It has a friendly restful API, like posting (text, photo, photo collection, or video) 
+  to any social medias, get insight (likes, comments, views, and shares) of a post, comment to a post, posting single or batch direct messages, tracking posts, and get basic accounts data.
+  
+  The restful API has a friendly payload too. In example is for post a posting to any social media request
+
+  ```json
+  POST    /posts
+
+          payload         
+          { 
+              id, // postId
+              type, // photo, video, album (photo collection), text
+              medias 
+              [
+                  {
+                      url, // grabbed from local
+                      type, // photo or video
+                      metadata 
+                      {
+                          width,
+                          height,
+                          duration
+                      }
+                  },
+                  ...
+              ],
+              thumbnail // for video only
+              {
+                  url, // grabbed from local
+                  type, // photo
+                  metadata 
+                  {
+                      width,
+                      height
+                  }
+              }
+              captions
+              [
+                  {
+                      type, // instagram, facebookPage, or twitter
+                      text
+                  },
+                  ...
+              ]
+              accountIds 
+              [ 
+                  accountId,
+                  ...
+              ]
+          }
+  ```
+
+  and the response is
+
+  ```json
+  POST    /posts         
+          { 
+              id, // postId
+              items
+              [
+                  {
+                      accountId,
+                      socialPostId, // if success
+                      isFailed
+                  },
+                  ...
+              ] 
+          }
+  ```
+
+  The json file above should be self explanation.
+
+  #### Are you curious?
+
+  [Contact Me](https://pratamabayu.com/contact) to get more info.
+
+image:
+  url: /images/projects/socialhub-banner.png
+  title: "Project: SocialHub"
+  alt: A screenshot of SocialHub
+tags: ['C#', 'ASP .Net Core', 'RabbitMQ', 'MongoDB', 'Facebook', 'Twitter', 'Instagram']
