@@ -37,5 +37,4 @@ firebase deploy --only hosting
 
 # for deploy using token
 #firebase deploy --only hosting --token $FIREBASE_TOKEN
-#firebase deploy --only hosting --token 1//0g52bTTRgnc0dCgYIARAAGBASNwF-L9Irti8kAjCvtp6uYzADItLXyMZqElLryxGNtKhK-P849L8-y-pqM8jVHgRxKgmfWahmM24
 ```
