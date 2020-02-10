@@ -8,6 +8,6 @@
     "deploy": "firebase deploy --token $FIREBASE_TOKEN"
   },
   "devDependencies": {
-    "firebase-tools": "^3.7.0"
+    "firebase-tools": "7.12.1"
   }
 }
