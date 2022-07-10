@@ -1,0 +1,44 @@
+<header class="position-sticky position-top background-color-background-light">
+    <nav class="flex flex-align-items-center flex-justify-content-between navbar navbar-light border-radius-2xsmall" id="navbar">
+        <div class="margin-large margin-remove-vertical margin-remove-all@m">
+            <div class="flex flex-align-items-center flex-justify-content-start">
+                <div class="none inline@m">
+                    <a href="{{ .Page.Permalink }}#sidebar-primary"
+                        class="margin-medium margin-remove-vertical margin-remove-left">
+                        <svg class="icon">
+                            <use xlink:href="icons/graff-icons.svg#menu-left" />
+                        </svg>
+                    </a>
+                </div>
+                <div>
+                    <a href="/" class="flex flex-align-items-center flex-justify-content-start">
+                        <div>
+                            <img src="/images/logo.png" width="48" />
+                        </div>
+                        <div class="margin-small margin-remove-vertical margin-remove-right">
+                            <h4 class="margin-remove-bottom color-primary color-primary-dark@hover">{{
+                                .Site.Params.project_name }}</h4>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="margin-large margin-remove-vertical margin-remove-all@m">
+            <ul class="navbar-nav">
+                {{ range .Site.Menus.main }}
+                    <li>
+                        <a href="{{ .URL }}" title="{{ .Title }}" class="{{ with .Params.class }}{{ . }}{{ end }}">{{- .Name -}}</a>
+                    </li>
+                {{ end }}
+                <li>
+                    <a href="{{- .Site.Params.created_by_url -}}" target="_blank" class="color-text color-text-light@hover">
+                        <svg class="icon">
+                            <use xlink:href="icons/graff-icons.svg#github" />
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    {{- partial "nav-offcanvas.html" . -}}
+</header>

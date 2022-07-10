@@ -1,0 +1,36 @@
+{{ define "main" }}
+<section class="margin-large">
+    {{.Content}}
+
+    <section class="margin-xlarge margin-remove-horizontal@m flex flex-column flex-justify-content-start gap-row-small">
+        <section>
+            <ul class="tab flex flex-justify-content-center">
+                <li class="active"><a href="">All</a></li>
+                {{ range .Site.Params.project_categories }}
+                    <li>
+                        <a href="#" title="{{ . }}">{{ . }}</a>
+                    </li>
+                {{ end }}
+            </ul>
+        </section>
+    </section>
+    
+    <section class="margin-xlarge margin-remove-horizontal@m padding-xlarge padding-remove-top padding-remove-horizontal@m grid grid-3-columns grid-1-columns@m gap-medium">
+        {{ range (where .Site.RegularPages "Section" "==" "project") }}
+            <div data-filters="{{ .Params.project_categories }}">
+                <a href="/project/{{ lower .Title }}/">
+                    <div class="card card-default box-shadow-large box-shadow-none@dark">
+                        <div class="card-header padding-remove-horizontal padding-remove-top">
+                            <img src="{{ .Params.project_banner_url }}" class="border-radius-xsmall border-radius-remove-bottom-left border-radius-remove-bottom-right width-1/1">
+                        </div>
+                        <div class="card-body">
+                            <h5>{{ .Title }}</h5>
+                            <h6>{{ .Params.project_type }}</h6>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        {{ end }}
+    </section>
+</section>
+{{ end }}

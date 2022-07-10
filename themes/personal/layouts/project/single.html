@@ -1,0 +1,40 @@
+{{ define "main" }}
+<section class="margin-large">
+    <section class="flex flex-align-items-center flex-justify-content-center">
+        <div>
+            <h1 class="text-center">{{ .Title }}</h1>
+            <h3 class="text-center">{{ .Params.project_type }}</h3>
+            <div class="flex flex-wrap flex-justify-content-center gap-column-xsmall">
+                {{ range .Params.project_categories }}
+                    <span class="tag border-radius-xsmall">{{ . }}</span>
+                {{ end }}
+            </div>
+            {{ if isset .Params "project_url" }}
+                <div class="flex flex-wrap flex-justify-content-center margin-large margin-remove-horizontal">
+                    <a href="{{ .Params.project_url }}" class="button button-primary" target="_blank">{{ .Params.project_url_cta }}</a>
+                </div>
+            {{ end }}
+        </div>
+    </section>
+    
+    <section class="margin-xlarge margin-remove-horizontal@m grid grid-4-columns grid-1-columns@m gap-medium">
+        <div>
+            <h5>Roles</h5>
+            <div class="flex flex-wrap flex-justify-content-start gap-column-xsmall">
+                {{ range .Params.project_roles }}
+                    <span class="tag border-radius-xsmall">{{ . }}</span>
+                {{ end }}
+            </div>
+        </div>
+        <div class="grid-column-span-2 grid-column-span-1@m">{{.Content}}</div>
+        <div>
+            <h5>Tags</h5>
+            <div class="flex flex-wrap flex-justify-content-start gap-column-xsmall">
+                {{ range .Params.project_tags }}
+                    <span class="tag border-radius-xsmall">{{ . }}</span>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+</section>
+{{ end }}

@@ -1,0 +1,43 @@
+baseURL = ''
+languageCode = 'en-us'
+title = 'Pratama Bayu Widagdo'
+theme = 'personal'
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[markup.highlight]
+codeFences = false
+
+[params]
+google_analytics_id = "UA-105480363-1"
+site_name = "Pratama Bayu Widagdo"
+site_url = "https://pratamabayu.com"
+site_description = "Pratama Bayu Widagdo is Designer, Programmer, and Lecturer"
+site_slogan = "Designer, Programmer, and Lecturer"
+site_keywords = "Pratama Bayu Widagdo, Personal, Designer, Programmer, Lecturer"
+created_by_name = "Pratama Bayu Widagdo"
+created_by_url = "https://pratamabayu.com"
+copyright_years = "2014 - 2022"
+
+project_categories = ["Game", "Desktop App", "Mobile App"]
+
+[menu]
+[[menu.main]]
+  name = 'About'
+  url = '/'
+  weight = -1
+  [menu.main.params]
+    class = 'none@m'
+[[menu.main]]
+  name = 'Project'
+  url = '/project/'
+  weight = 2
+  [menu.main.params]
+    class = 'none@m'
+[[menu.main]]
+  name = 'Contact'
+  url = '/contact/'
+  weight = 4
+  [menu.main.params]
+    class = 'none@m'

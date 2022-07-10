@@ -1,0 +1,21 @@
+<section class="offcanvas" id="sidebar-primary">
+    <div class="offcanvas-overlay">
+        <a href="{{ .Page.Permalink }}#close" class="block height-100vh"></a>
+    </div>
+    <div class="offcanvas-bar">
+        <div class="margin-medium margin-remove-horizontal">
+            <a href="/" class="flex flex-align-items-center flex-justify-content-start">
+                <div>
+                    <img src="/images/logo.png" width="48" />
+                </div>
+            </a>
+        </div>
+        <ul class="nav">
+            {{ range .Site.Menus.main }}
+                <li>
+                    <a href="{{ .URL }}" title="{{ .Title }}">{{- .Name -}}</a>
+                </li>
+            {{ end }}
+        </ul>
+    </div>
+</section>
