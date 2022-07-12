@@ -11,7 +11,7 @@ draft: false
     </div>
 </section>
 
-<section class="margin-xlarge margin-remove-horizontal@m grid grid-4-columns grid-1-columns@m gap-medium">
+<section class="margin-xlarge margin-large@m margin-remove-horizontal@m grid grid-4-columns grid-1-columns@m gap-medium">
     <div>
         <h6>Email</h6>
         <p><a id="email-link"></a></p>

@@ -2,22 +2,22 @@
 <section class="margin-large">
     {{.Content}}
 
-    <section class="margin-xlarge margin-remove-horizontal@m flex flex-column flex-justify-content-start gap-row-small">
+    <section class="margin-large margin-remove-horizontal@m flex flex-column flex-justify-content-start gap-row-small">
         <section>
-            <ul class="tab flex flex-justify-content-center">
-                <li class="active"><a href="">All</a></li>
+            <ul id="filters-pane" class="tab flex flex-justify-content-center">
+                <li class="active"><a href="javascript:void(0)" data-filter="All" class="text-nowrap">All</a></li>
                 {{ range .Site.Params.project_categories }}
                     <li>
-                        <a href="#" title="{{ . }}">{{ . }}</a>
+                        <a href="javascript:void(0)" title="{{ . }}" data-filter="{{ . }}" class="text-nowrap">{{ . }}</a>
                     </li>
                 {{ end }}
             </ul>
         </section>
     </section>
     
-    <section class="margin-xlarge margin-remove-horizontal@m padding-xlarge padding-remove-top padding-remove-horizontal@m grid grid-3-columns grid-1-columns@m gap-medium">
+    <section id="filters-content" class="margin-large margin-remove-horizontal@m padding-large padding-remove-top padding-remove-horizontal@m grid grid-3-columns grid-1-columns@m gap-medium">
         {{ range (where .Site.RegularPages "Section" "==" "project") }}
-            <div data-filters="{{ .Params.project_categories }}">
+            <div class="animation animation-scale-in animation-duration-faster" style="--animation-delay:0s" data-filters="{{ delimit .Params.project_categories "," }}">
                 <a href="/project/{{ lower .Title }}/">
                     <div class="card card-default box-shadow-large box-shadow-none@dark">
                         <div class="card-header padding-remove-horizontal padding-remove-top">
@@ -33,4 +33,47 @@
         {{ end }}
     </section>
 </section>
+
+<script>
+    const filters = document.querySelectorAll('#filters-pane > li > a');
+    
+    filters.forEach(filter => { 
+        filter.addEventListener('click', function() {
+    
+            let selectedFilter = filter.getAttribute('data-filter');
+
+            Array.from(filters).forEach(el => {
+                console.log(el.parentElement);
+                el.parentElement.classList.remove('active');
+            });
+
+            filter.parentElement.classList.add('active');
+
+            let itemsAll = Array.from(document.querySelectorAll('#filters-content > [data-filters]'));
+
+            let itemsToHide = itemsAll.filter(function(item) {
+                let values = item.getAttribute('data-filters').split(',');
+                return !values.includes(selectedFilter);
+            });
+            let itemsToShow = itemsAll.filter(function(item) {
+                let values = item.getAttribute('data-filters').split(',');
+                return values.includes(selectedFilter);
+            });
+    
+            if (selectedFilter == 'All') {
+                itemsToHide = [];
+                itemsToShow = itemsAll;
+            }
+    
+            itemsToHide.forEach(el => {
+                el.classList.add('none');
+            });
+    
+            itemsToShow.forEach(el => {
+                el.classList.remove('none');
+            });
+        });
+    });
+    </script>
+
 {{ end }}

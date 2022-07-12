@@ -11,7 +11,7 @@ draft: false
     </div>
 </section>
 
-<section class="margin-xlarge margin-remove-horizontal@m grid grid-4-columns grid-1-columns@m gap-medium">
+<section class="margin-large margin-remove-horizontal@m grid grid-4-columns grid-1-columns@m gap-medium">
     <div><div class="flex align-items-center justify-content-center"><img src="/images/profile_photo.jpg" class="text-center@m border-radius-1/2" width="128px"/></div></div>
     <div class="grid-column-span-2 grid-column-span-1@m">
         <p>I'm a <span id="my-age"></span> years old, Designer, Programmer, and Lecturer from Indonesia, currently based in Semarang. I use design thinking to solve problems, especially those related to digital technology. So, I love everything about application, game, and web programming to support it. At free time, I usually play with my family and play bass instrumentally.</p>
@@ -21,7 +21,7 @@ draft: false
     <div></div>
 </section>
 
-<section class="margin-xlarge margin-remove-horizontal@m grid grid-4-columns grid-1-columns@m gap-medium">
+<section class="margin-large margin-remove-horizontal@m grid grid-4-columns grid-1-columns@m gap-medium">
     <div><h5>Education</h5></div>
     <div class="grid-column-span-2 grid-column-span-1@m">
         <h6>Master of Design</h6>
@@ -40,7 +40,7 @@ draft: false
     </div>
 </section>
 
-<section class="margin-xlarge margin-remove-horizontal@m grid grid-4-columns grid-1-columns@m gap-medium">
+<section class="margin-large margin-remove-horizontal@m grid grid-4-columns grid-1-columns@m gap-medium">
     <div><h5>Work</h5></div>
     <div class="grid-column-span-2 grid-column-span-1@m">
         <h6>Visual Art Lecturer</h6>
@@ -61,7 +61,7 @@ draft: false
     </div>
 </section>
 
-<section class="margin-xlarge margin-remove-horizontal@m grid grid-4-columns grid-1-columns@m gap-medium">
+<section class="margin-large margin-remove-horizontal@m grid grid-4-columns grid-1-columns@m gap-medium">
     <div><h5>Skillset</h5></div>
 </section>
 
