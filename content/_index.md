@@ -2,6 +2,7 @@
 title: "About"
 date: 2021-06-17T13:58:33+07:00
 draft: false
+aliases: [/about]
 ---
 
 <section class="flex flex-align-items-center flex-justify-content-center">
