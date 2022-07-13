@@ -64,6 +64,46 @@ aliases: [/about]
 
 <section class="margin-large margin-remove-horizontal@m grid grid-4-columns grid-1-columns@m gap-medium">
     <div><h5>Skillset</h5></div>
+    <div class="grid-column-span-3 grid-column-span-1@m">
+        <div class="grid grid-2-columns grid-1-columns@m gap-medium">
+            <div class="card card-default box-shadow-large box-shadow-none@dark">
+                <!--<div class="card-header padding-remove-horizontal padding-remove-top">
+                    <img src="/images/skillset_interactive media.png" class="border-radius-xsmall border-radius-remove-bottom-left border-radius-remove-bottom-right width-1/1">
+                </div>-->
+                <div class="card-body">
+                    <h5>Interactive Media</h5>
+                    <p>When designing interactive media such as 2d/3d games, simulations, virtual reality, and augmented reality apps, I often use C++, C#, and Unity3D ⁠&mdash; real-time content creation.<p>
+                </div>
+            </div>
+            <div class="card card-default box-shadow-large box-shadow-none@dark">
+                <!--<div class="card-header padding-remove-horizontal padding-remove-top">
+                    <img src="/images/skillset_web.png" class="border-radius-xsmall border-radius-remove-bottom-left border-radius-remove-bottom-right width-1/1">
+                </div>-->
+                <div class="card-body">
+                    <h5>Web</h5>
+                    <p>Web backend, designed with C# language, ASP Net Core framework, MongoDB database, and RabbitMQ message queue. While the web frontend, designed with HTML5, CSS3 &mdash; with <a href="https://github.com/pratamabayu/graff" target="_blank" class="text-underline">the Graff CSS framework</a>, and Typescript &mdash; with the Angular web application framework.<p>
+                </div>
+            </div>
+            <div class="card card-default box-shadow-large box-shadow-none@dark">
+                <!--<div class="card-header padding-remove-horizontal padding-remove-top">
+                    <img src="/images/skillset_desktop app.png" class="border-radius-xsmall border-radius-remove-bottom-left border-radius-remove-bottom-right width-1/1">
+                </div>-->
+                <div class="card-body">
+                    <h5>Desktop App</h5>
+                    <p>When designing a desktop app I will prefer to write it in Dart with the Flutter multi-platform application framework. In my legacy experience, I often wrote it using C# with Windows Presentation Framework as UI framework.<p>
+                </div>
+            </div>
+            <div class="card card-default box-shadow-large box-shadow-none@dark">
+                <!--<div class="card-header padding-remove-horizontal padding-remove-top">
+                    <img src="/images/skillset_mobile app.png" class="border-radius-xsmall border-radius-remove-bottom-left border-radius-remove-bottom-right width-1/1">
+                </div>-->
+                <div class="card-body">
+                    <h5>Mobile App</h5>
+                    <p>When designing a mobile app I will prefer to write it in Dart with the Flutter multi-platform application framework. In my legacy experience, I often wrote it using C# with Xamarin.Forms as cross-platform UI framework.<p>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <script>

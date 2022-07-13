@@ -20,7 +20,7 @@ created_by_name = "Pratama Bayu Widagdo"
 created_by_url = "https://pratamabayu.com"
 copyright_years = "2014 - 2022"
 
-project_categories = ["Game", "Desktop App", "Mobile App"]
+project_categories = ["Interactive Media", "Desktop App", "Mobile App"]
 
 [menu]
 [[menu.main]]

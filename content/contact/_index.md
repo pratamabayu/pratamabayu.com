@@ -26,19 +26,21 @@ draft: false
             <div class="form-field margin-remove-left margin-remove-top">
                 <label class="form-label margin-remove-top">Name</label>
                 <div class="form-control">
-                    <input type="text" placeholder="Please enter your name" class="form-input width-1/2 width-1/1@m" />
+                    <input id="form-name" name="name" type="text" placeholder="Please enter your name" class="form-input width-1/2 width-1/1@m" />
                 </div>
             </div>
             <div class="form-field margin-remove-horizontal">
                 <label class="form-label">Email</label>
                 <div class="form-control">
-                    <input type="email" placeholder="Please enter your email" class="form-input width-1/2 width-1/1@m" />
+                    <input id="form_email" name="_replyto" type="email" placeholder="Please enter your email" class="form-input width-1/2 width-1/1@m" />
+                    <input type="hidden" name="_subject" value="Yay! You got new message" />
+                    <input type="hidden" name="_next" value="/contact/thanks" />
                 </div>
             </div>
             <div class="form-field margin-remove-horizontal">
                 <label class="form-label">Message</label>
                 <div class="form-control">
-                    <textarea placeholder="Message for me" class="form-input width-1/1" rows="6"></textarea>
+                    <textarea id="form_message" name="message" placeholder="Message for me" class="form-input width-1/1" rows="6"></textarea>
                 </div>
             </div>
             <div class="form-field margin-remove-horizontal">

@@ -6,7 +6,7 @@ project_url: https://impression3d.github.io/
 project_url_cta: Go to project site
 project_type: Game Toolkit
 project_banner_url: /images/projects/impression/banner.png
-project_categories: ['Game']
+project_categories: ['Interactive Media']
 project_in_progress: false
 project_roles: ['Designer', 'Programmer']
 project_tags: ['C#', 'DirectX', 'OpenGL', 'Desktop', 'Mobile', 'Console']
